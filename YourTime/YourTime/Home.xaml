@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourTime.Home">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <AbsoluteLayout x:Name="absoluteLayout"
+                            HeightRequest="230"
+                            WidthRequest="230"
+                            Margin="0,50,0,20" >
+                <BoxView x:Name="hourHand"  
+                         Color="Gray" 
+                         CornerRadius="20" />
+                <BoxView x:Name="minuteHand"  
+                         Color="Black" 
+                         CornerRadius="20" />
+                <BoxView x:Name="secondHand"  
+                         Color="black" 
+                         CornerRadius="20" />
+            </AbsoluteLayout>
+
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="Center" 
+                         WidthRequest="230" 
+                         Margin="0,0,0,50">
+                <Label x:Name="lblTimeHHMM"
+                       Text="00:00" 
+                       HorizontalOptions="StartAndExpand" 
+                       FontSize="57" 
+                       FontAttributes="Bold"
+                       VerticalOptions="CenterAndExpand"
+                       FontFamily="Assets/Fonts/ROBOTO-BOLD.ttf"
+                       Margin="0,0,0,0"/>
+                <Button x:Name="btnHourMinus" 
+                        Text="-1Hr" 
+                        CornerRadius="20" 
+                        BackgroundColor="White" 
+                        BorderColor="LightGray" 
+                        TextColor="LightGray"
+                        BorderWidth="1"
+                        WidthRequest="57" 
+                        FontAttributes="None"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="End"
+                        FontFamily="Assets/Fonts/ROBOTO-MEDIUM.ttf"
+                        Padding="0"
+                        Clicked="BtnHourMinus_Clicked"
+                    ></Button>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="Center" 
+                         WidthRequest="230">
+                <Frame CornerRadius="20" 
+                       Padding="0" 
+                       IsClippedToBounds="True" 
+                       HorizontalOptions="Start" 
+                       Margin="0,0,20,0">
+                    <Image x:Name="imgAvatar"
+                           WidthRequest="70"
+                           HeightRequest="70"
+                           Source="https://api.adorable.io/avatars/150/johan">
+                    </Image>
+                </Frame>
+                <StackLayout HorizontalOptions="FillAndExpand" 
+                             VerticalOptions="Center">
+                    <Label Margin="0,0,0,-15" 
+                           TextColor="LightGray"
+                            FontSize="13" 
+                            FontAttributes="None"
+                            FontFamily="Assets/Fonts/ROBOTO-MEDIUM.ttf" 
+                            VerticalOptions="CenterAndExpand" >username</Label>
+                    <Editor x:Name="txtUsername" 
+                            FontSize="12"
+                            FontAttributes="None"
+                            TextColor="Gray"
+                            VerticalOptions="CenterAndExpand"
+                            FontFamily="Assets/Fonts/ROBOTO-MEDIUM.ttf"
+                            Text="johan" ></Editor>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center"
+                         WidthRequest="230"
+                         VerticalOptions="EndAndExpand">
+                <Button CornerRadius="20" 
+                        BackgroundColor="White" 
+                        BorderColor="LightGray" 
+                        TextColor="LightGray"
+                        BorderWidth="1"
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="End"
+                        x:Name="btnClose" 
+                        Text="Close" 
+                        Clicked="BtnClose_Clicked" 
+                        Padding="0"
+                        Margin="0,0,0,20"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
